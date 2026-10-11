@@ -18,7 +18,15 @@ jobs:
       - name: Install TeX dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends latexmk texlive-xetex texlive-lang-cyrillic texlive-latex-extra texlive-science fonts-dejavu-core python3-pygments
+          sudo apt-get install -y --no-install-recommends \
+            latexmk \
+            texlive-xetex \
+            texlive-lang-cyrillic \
+            texlive-latex-extra \
+            texlive-plain-generic \
+            texlive-science \
+            fonts-dejavu-core \
+            python3-pygments
       - name: Build PDF
         run: make -C report
       - name: Upload PDF
